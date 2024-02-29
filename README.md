@@ -63,7 +63,12 @@ Para agregar un nuevo microfrontend al ecosistema, sigue estos pasos:
    });
 
 ## Cambiar Puertos: 
-Definir preview en el package.json del microfrontend con tu puerto ej. "vite preview --port 5003 --strictPort" (en este caso el microfrontend se ejecutara el preview en el puerto 5003)
+Definir preview en el package.json del microfrontend con tu puerto ej.
+
+```json
+"vite preview --port 5003 --strictPort"
+
+(en este caso el microfrontend se ejecutara el preview en el puerto 5003)
 
 ## Instalar Dependencias y Construir: 
 Navega al directorio de tu nuevo microfrontend y ejecuta npm install seguido de npm run build y npm run preview
