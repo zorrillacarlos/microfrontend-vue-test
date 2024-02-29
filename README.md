@@ -44,8 +44,8 @@ Para agregar un nuevo microfrontend al ecosistema, sigue estos pasos:
 
 2. **Configurar `vite-plugin-federation`**: En el archivo `vite.config.js` de tu nuevo microfrontend, configura `vite-plugin-federation` para exponer los módulos o componentes que desees compartir.
 
-   ```javascript
-   // vite.config.js
+   ```typescript
+   // vite.config.ts del microfrontend
    import { defineConfig } from 'vite';
    import federation from 'vite-plugin-federation';
 
@@ -72,7 +72,8 @@ Navega al directorio de tu nuevo microfrontend y ejecuta npm install seguido de 
 
 Ve al proyecto de layout y actualiza su configuración para incluir el nuevo microfrontend. Esto generalmente implica actualizar el archivo vite.config.js para consumir el nuevo remoteEntry.js.
 
-// vite.config.js del layout
+```typescript
+// vite.config.ts del layout
 import { defineConfig } from 'vite';
 import federation from 'vite-plugin-federation';
 
@@ -86,6 +87,7 @@ export default defineConfig({
     }),
   ],
 });
+```
 
 ## Ejecutar el Layout: 
 
@@ -96,12 +98,12 @@ Para integrar componentes de otros microfrontends en tu layout, sigue estos paso
 
 ## Importar el Componente:
 
-// Dentro de remote.d.ts
-En el archivo remote.d.ts se debe declarar la ruta modulada para un nuevo microfrontend, ej.
+- Dentro de remote.d.ts
+En el archivo remote.d.ts se debe declarar el modulo para un nuevo microfrontend, ej.
 
 declare module "microfrontend-3/*"{}
 
-// Dentro del .vue del layout
+- Dentro del .vue del layout
 
 import NuevoComponente from "microfrontend-3/NuevoComponente"; (en script)
 
