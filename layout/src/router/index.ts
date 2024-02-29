@@ -14,10 +14,6 @@ const routes: Array<RouteRecordRaw> = [
     name: "MicroFrontend2",
     component: () => import("microfrontend-2/VistaNueva"),
   },
-  // {
-  //   path: '/microfrontend-3',
-  //   component: () => import('../../../microfrontend-3/src/App.vue')
-  // }
 ];
 
 const router = createRouter({
