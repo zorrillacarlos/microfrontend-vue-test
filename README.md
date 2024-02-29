@@ -67,6 +67,7 @@ Definir preview en el package.json del microfrontend con tu puerto ej.
 
 ```json
 "vite preview --port 5003 --strictPort"
+```
 
 (en este caso el microfrontend se ejecutara el preview en el puerto 5003)
 
