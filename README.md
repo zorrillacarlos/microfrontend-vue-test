@@ -1,85 +1,97 @@
-# Proyecto Test de Microfrontend
+# Microfrontend Test Project
 
-Este proyecto es un ejemplo de arquitectura de microfrontend, donde cada microfrontend se desarrolla, construye y despliega de manera independiente, y un proyecto de layout los ensambla todos juntos.
+This project is an example of a microfrontend architecture, where each microfrontend is developed, built, and deployed independently, and a layout project assembles them all together.
 
-## Estructura del Proyecto
+## Project Structure
 
-El proyecto está dividido en varios microfrontends y un proyecto de layout principal que los integra. Cada uno reside en su propio directorio y tiene su propio conjunto de dependencias.
+The project is divided into several microfrontends and a main layout project that integrates them. Each resides in its own directory and has its own set of dependencies.
 
-## Requisitos Previos
+## Prerequisites
 
-Antes de comenzar, asegúrate de tener instalado [Node.js](https://nodejs.org/) y npm en tu sistema. Estas herramientas son necesarias para instalar dependencias, construir y ejecutar los proyectos.
+Before getting started, make sure you have [Node.js](https://nodejs.org/) and npm installed on your system. These tools are necessary for installing dependencies, building, and running the projects.
 
-## Instalación
+## Installation
 
-Para poner en marcha el proyecto, sigue estos pasos:
+To get the project up and running, follow these steps:
 
-### 1. Instalar Dependencias
+### 1. Install Dependencies
 
-Deberás instalar las dependencias de cada microfrontend y del proyecto de layout. Navega a cada directorio y ejecuta:
+You'll need to install dependencies for each microfrontend and the layout project. Navigate to each directory and run:
 
 ```bash
 npm install
-Repite este paso para cada microfrontend y para el proyecto de layout.
-
-2. Construir y Visualizar Microfrontends
-Para construir y visualizar cada microfrontend, navega al directorio correspondiente y ejecuta:
-
-npm run build
-npm run preview
-Esto compilará el microfrontend y lo pondrá a disposición para ser visualizado.
-
-3. Ejecutar el Proyecto de Layout
-Para iniciar el proyecto de layout, que integra todos los microfrontends, navega al directorio del layout y ejecuta:
-
-npm run dev
-Esto iniciará un servidor de desarrollo local y podrás ver el proyecto completo en acción.
 ```
 
-# Agregar un Nuevo Microfrontend
+Repeat this step for each microfrontend and for the layout project.
 
-Para agregar un nuevo microfrontend al ecosistema, sigue estos pasos:
+### 2. Build and Preview Microfrontends
 
-1. **Crear un nuevo Microfrontend**: Genera un nuevo proyecto o directorio para tu microfrontend. Asegúrate de que esté configurado para usar Vite y `vite-plugin-federation`.
+To build and preview each microfrontend, navigate to the respective directory and execute:
 
-2. **Configurar `vite-plugin-federation`**: En el archivo `vite.config.js` de tu nuevo microfrontend, configura `vite-plugin-federation` para exponer los módulos o componentes que desees compartir.
+```bash
+npm run build
+npm run preview
+```
+
+This will compile the microfrontend and make it available for preview.
+
+### 3. Run the Layout Project
+
+To start the layout project, which integrates all the microfrontends, navigate to the layout directory and run:
+
+```bash
+npm run dev
+```
+
+This will start a local development server, and you'll be able to see the complete project in action.
+
+## Adding a New Microfrontend
+
+To add a new microfrontend to the ecosystem, follow these steps:
+
+1. **Create a New Microfrontend**: Generate a new project or directory for your microfrontend. Make sure it's configured to use Vite and `vite-plugin-federation`.
+
+2. **Configure `vite-plugin-federation`**: In the `vite.config.js` file of your new microfrontend, configure `vite-plugin-federation` to expose the modules or components you want to share.
 
    ```typescript
-   // vite.config.ts del microfrontend
+   // vite.config.ts of the microfrontend
    import { defineConfig } from 'vite';
    import federation from 'vite-plugin-federation';
 
    export default defineConfig({
      plugins: [
        federation({
-         name: 'tu_microfrontend',
+         name: 'your_microfrontend',
          filename: 'remoteEntry.js',
          exposes: {
-           './Componente': './src/Componente.vue',
+           './Component': './src/Component.vue',
          },
          shared: ['vue'],
        }),
      ],
    });
+   ```
 
-## Cambiar Puertos: 
-Definir preview en el package.json del microfrontend con tu puerto ej.
+### Change Ports
+
+Define preview in the package.json of the microfrontend with your port.
 
 ```json
-"vite preview --port 5003 --strictPort"
+  "preview": "vite preview --port 5002 --strictPort"
 ```
 
-(en este caso el microfrontend se ejecutara el preview en el puerto 5003)
+(In this case, the microfrontend will run the preview on port 5003)
 
-## Instalar Dependencias y Construir: 
-Navega al directorio de tu nuevo microfrontend y ejecuta npm install seguido de npm run build y npm run preview
+### Install Dependencies and Build
 
-## Actualizar el Layout: 
+Navigate to your new microfrontend directory and execute `npm install` followed by `npm run build` and `npm run preview`.
 
-Ve al proyecto de layout y actualiza su configuración para incluir el nuevo microfrontend. Esto generalmente implica actualizar el archivo vite.config.js para consumir el nuevo remoteEntry.js.
+### Update the Layout
+
+Go to the layout project and update its configuration to include the new microfrontend. This usually involves updating the `vite.config.js` file to consume the new `remoteEntry.js`.
 
 ```typescript
-// vite.config.ts del layout
+// vite.config.ts of the layout
 import { defineConfig } from 'vite';
 import federation from 'vite-plugin-federation';
 
@@ -87,7 +99,7 @@ export default defineConfig({
   plugins: [
     federation({
       remotes: {
-        tu_microfrontend: 'http://localhost:5003/assets/remoteEntry.js',
+        your_microfrontend: 'http://localhost:5003/assets/remoteEntry.js',
       },
       shared: ['vue'],
     }),
@@ -95,32 +107,42 @@ export default defineConfig({
 });
 ```
 
-## Ejecutar el Layout: 
+### Run the Layout
 
-Inicia el proyecto de layout con npm run dev. Ahora deberías poder utilizar los componentes del nuevo microfrontend dentro del layout.
+Start the layout project with `npm run dev`. Now you should be able to use the components from the new microfrontend within the layout.
 
-Integrar Componentes en el Layout
-Para integrar componentes de otros microfrontends en tu layout, sigue estos pasos:
+## Integrating Components into the Layout
 
-## Importar el Componente:
+To integrate components from other microfrontends into your layout, follow these steps:
 
-- Dentro de remote.d.ts
-En el archivo remote.d.ts se debe declarar el modulo para un nuevo microfrontend, ej.
+### Import the Component
 
-declare module "microfrontend-3/*"{}
+- Inside `remote.d.ts`
 
-- Dentro del .vue del layout
+Declare the module for a new microfrontend.
 
-import NuevoComponente from "microfrontend-3/NuevoComponente"; (en script)
+```typescript
+declare module "microfrontend-3/*" {}
+```
 
-## Usar el Componente: 
+- Inside the layout's `.vue` file
 
-Una vez importado, puedes utilizar el componente como lo harías con cualquier otro componente Vue.
+Import the new component.
 
-<NuevoComponente msg="Nuevo mensaje" /> (en template reciendo un props en caso lo requiera)
+```javascript
+import NuevoComponente from "microfrontend-3/NuevoComponente";
+```
 
-## Ejecutar y Probar: 
+### Use the Component
 
-Inicia tu proyecto de layout con npm run dev y verifica que el componente se carga y funciona correctamente dentro de tu aplicación.
+Once imported, you can use the component as you would with any other Vue component.
 
-Recuerda que las URLs y nombres de los componentes deben coincidir con la configuración de tu proyecto y los puertos en los que se ejecutan tus microfrontends.
+```html
+<NuevoComponente msg="New message" />
+```
+
+### Run and Test
+
+Start your layout project with `npm run dev` and verify that the component loads and functions correctly within your application.
+
+Remember that the URLs and component names must match the configuration of your project and the ports on which your microfrontends run.
