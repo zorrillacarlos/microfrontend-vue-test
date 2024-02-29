@@ -130,7 +130,7 @@ declare module "microfrontend-3/*" {}
 Import the new component.
 
 ```javascript
-import NuevoComponente from "microfrontend-3/NuevoComponente";
+import NewComponent from "microfrontend-3/NewComponent";
 ```
 
 ### Use the Component
@@ -138,7 +138,7 @@ import NuevoComponente from "microfrontend-3/NuevoComponente";
 Once imported, you can use the component as you would with any other Vue component.
 
 ```html
-<NuevoComponente msg="New message" />
+<NewComponent msg="New message" />
 ```
 
 ### Run and Test
