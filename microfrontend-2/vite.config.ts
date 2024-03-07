@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { fileURLToPath, URL } from 'node:url'
 import vue from "@vitejs/plugin-vue";
 import federation from "@originjs/vite-plugin-federation";
 
@@ -9,8 +10,8 @@ export default defineConfig({
       name: "microfrontend-2",
       filename: "remoteEntry.js",
       exposes: {
-        "./VistaNueva": "./src/App.vue",
-        "./ButtonCounter": "./src/components/ButtonCounter.vue"
+        "./VistaMF2": "./src/App.vue",
+        "./ButtonCounter": "./src/components/ButtonCounter.vue",
       },
       shared: ["vue"],
     }),
@@ -23,5 +24,18 @@ export default defineConfig({
   },
   server: {
     port: 5002,
+  },
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@ui": fileURLToPath(new URL("./src/components", import.meta.url)),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/assets/global.scss";',
+      },
+    },
   },
 });

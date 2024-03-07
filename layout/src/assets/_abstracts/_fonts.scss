@@ -1,0 +1,83 @@
+@charset "utf-8";
+@use './units' as useUnit;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --font-default-family: 'Noto Sans';
+
+    --font-weight-400: 400;
+    --font-weight-700: 700;
+
+    --font-style-normal: normal;
+    --font-style-bold: bold;
+
+    --font-display-l-size: #{px2rem(calc(40))} / #{px2rem(calc(25))};
+    --font-display-m-size: #{px2rem(calc(32))} / #{px2rem(calc(44))}; 
+    --font-display-s-size: #{px2rem(calc(24))} / #{px2rem(calc(33))}; 
+    --font-heading-l-size: #{px2rem(calc(20))} / #{px2rem(calc(28))};
+    --font-heading-m-size: #{px2rem(calc(18))} / #{px2rem(calc(25))};
+    --font-body-m-size: #{px2rem(calc(16))} / #{px2rem(calc(24))}; 
+    --font-body-s-size: #{px2rem(calc(14))} / #{px2rem(calc(20))};
+    --font-body-xs-size: #{px2rem(calc(12))} / #{px2rem(calc(16))};
+
+    --font-underline: underline
+}
+
+:root {
+    // font style
+    // font weight
+    // font size
+    // font line-height
+    // font family
+    --font-display-l: 
+        var(--font-style-normal, normal) 
+        var(--font-weight-700, bold) 
+        var(--font-display-l-size, 1rem)
+        var(--font-default-family);
+
+    --font-display-m:
+        var(--font-style-normal, normal)
+        var(--font-weight-700, bold)
+        var(--font-display-m-size, 1rem)
+        var(--font-default-family);
+
+    --font-display-s:
+        var(--font-style-normal, normal)
+        var(--font-weight-700, bold)
+        var(--font-display-s-size, 1rem)
+        var(--font-default-family);
+    
+    --font-heading-l:
+        var(--font-style-normal, normal)
+        var(--font-weight-700, bold)
+        var(--font-heading-l-size, 1rem)
+        var(--font-default-family);
+
+    --font-heading-m:
+        var(--font-style-normal, normal)
+        var(--font-weight-700, bold)
+        var(--font-heading-m-size, 1rem)
+        var(--font-default-family);
+
+    --font-body-m:
+        var(--font-style-normal, normal)
+        var(--font-weight-400, normal)
+        var(--font-body-m-size, 1rem)
+        var(--font-default-family);
+    
+    --font-body-s:
+        var(--font-style-normal, normal)
+        var(--font-weight-400, normal)
+        var(--font-body-s-size, 1rem)
+        var(--font-default-family);
+    
+    --font-body-xs:
+        var(--font-style-normal, normal)
+        var(--font-weight-400, normal)
+        var(--font-body-xs-size, 1rem)
+        var(--font-default-family);
+
+    --elevation-400:
+        var(--elevation-400-size)
+        hsla(var(--color-neutral-default-70), .4);
+}

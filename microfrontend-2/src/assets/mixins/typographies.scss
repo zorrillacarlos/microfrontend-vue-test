@@ -1,0 +1,66 @@
+@mixin text-display-l {
+    font: var(--font-display-l)
+}
+
+@mixin text-display-m {
+    font: var(--font-display-m)
+}
+
+@mixin text-display-s {
+    font: var(--font-display-s)
+}
+
+@mixin text-heading-l {
+    font: var(--font-heading-l)
+}
+
+@mixin text-heading-m {
+    font: var(--font-heading-m)
+}
+
+@mixin text-body-m--regular {
+    font: var(--font-body-m);
+}
+
+@mixin text-body-m--bold {
+    font: var(--font-body-m);
+    font-weight: var(--font-weight-700);
+}
+
+@mixin text-body-s--regular {
+    font: var(--font-body-s);
+}
+
+@mixin text-body-s--bold {
+    font: var(--font-body-s);
+    font-weight: var(--font-weight-700);
+}
+
+@mixin text-body-xs--regular {
+    font: var(--font-body-xs);
+}
+
+@mixin text-body-xs--bold {
+    font: var(--font-body-xs);
+    font-weight: var(--font-weight-700);
+}
+
+@mixin text-link-m--bold {
+    @include text-body-m--bold;
+    text-decoration: var(--font-underline);
+}
+
+@mixin text-link-m--regular {
+    @include text-body-m--regular;
+    text-decoration: var(--font-underline);
+}
+
+@mixin text-link-s--bold {
+    @include text-body-s--bold;
+    text-decoration: var(--font-underline);
+}
+
+@mixin text-link-s--regular {
+    @include text-body-s--regular();
+    text-decoration: var(--font-underline);
+}

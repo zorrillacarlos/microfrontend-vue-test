@@ -1,0 +1,9 @@
+@use './units' as useUnit;
+
+:root {
+    --radius-200: #{px2rem(calc(useUnit.$unit-base / 2))}; // 4
+    --radius-300: #{px2rem(calc(useUnit.$unit-base))}; // 8
+    --radius-400: #{px2rem(calc(useUnit.$unit-base * 2))}; // 16
+    --radius-500: #{px2rem(calc(useUnit.$unit-base * 3))}; // 24
+    --radius-600: 100%; // 100%
+}

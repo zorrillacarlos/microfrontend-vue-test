@@ -1,0 +1,40 @@
+ :root {
+   --elevation-100-size: 0 0 4px 0;
+   --elevation-200-size: 0 0 12px 0;
+   --elevation-300-size: 0 0 24px 0;
+   --elevation-400-size: 0 0 40px 0
+ }
+
+ :root {
+    --shadow-100:
+      var(--elevation-100-size, 0 0 0 0)
+      hsla(var(--color-neutral-default-70), .2);
+
+    --shadow-200:
+      var(--elevation-300-size, 0 0 0 0)
+      hsla(var(--color-neutral-default-70), .2);
+
+    --shadow-300:
+      var(--elevation-300-size, 0 0 0 0)
+      hsla(var(--color-neutral-default-70), .4);
+
+    --shadow-400:
+      var(--elevation-400-size, 0 0 0 0)
+      hsla(var(--color-neutral-default-70), .4);
+
+   --shadow-alt-100:
+      var(--elevation-100-size, 0 0 0 0)
+      hsla(var(--color-neutral-default-10), .2);
+
+    --shadow-alt-200:
+      var(--elevation-300-size, 0 0 0 0)
+      hsla(var(--color-neutral-default-10), .2);
+
+    --shadow-alt-300:
+      var(--elevation-300-size, 0 0 0 0)
+      hsla(var(--color-neutral-default-10), .4);
+
+    --shadow-alt-400:
+      var(--elevation-400-size, 0 0 0 0)
+      hsla(var(--color-neutral-default-10), .4)
+ }

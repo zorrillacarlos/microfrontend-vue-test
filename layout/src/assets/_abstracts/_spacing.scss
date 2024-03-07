@@ -1,0 +1,18 @@
+@use './units' as useUnit;
+
+:root {
+    --spacing-00: 0; // 0
+    --spacing-10: #{px2rem(calc(useUnit.$unit-base / 4))}; // 2
+    --spacing-20: #{px2rem(calc(useUnit.$unit-base / 2))}; // 4
+    --spacing-30: #{px2rem(calc(useUnit.$unit-base))}; // 8
+    --spacing-40: #{calc(var(--spacing-30) + var(--spacing-20))}; // 12
+    --spacing-50: #{px2rem(calc(useUnit.$unit-base * 2))}; // 16
+    --spacing-60: #{calc(var(--spacing-50) + var(--spacing-30))}; // 24
+    --spacing-70: #{px2rem(calc(useUnit.$unit-base * 4))}; // 32
+    --spacing-80: #{px2rem(calc(useUnit.$unit-base * 5))}; // 40
+    --spacing-90: #{px2rem(calc(useUnit.$unit-base * 6))}; // 48
+    --spacing-100: #{px2rem(calc(useUnit.$unit-base * useUnit.$unit-base))}; // 64
+    --spacing-110: #{px2rem(calc(useUnit.$unit-base * 10))}; // 80
+    --spacing-120: #{px2rem(calc(useUnit.$unit-base * 12))}; // 96
+    --spacing-130: #{px2rem(calc(useUnit.$unit-base * 15 ))}; // 120
+} 

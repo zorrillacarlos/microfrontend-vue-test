@@ -1,0 +1,40 @@
+.base-card {
+  border: 1px solid var(--color-primary-10, #000);
+  border-radius: var(--radius-300, 0);
+  padding: var(--spacing-70, 0);
+  margin-bottom: var(--spacing-50, 0);
+  width: 500px;
+  box-shadow: var(--shadow-100);
+
+  &.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+
+  &article {
+    opacity: 0;
+  }
+
+  &__header {
+    font-weight: bold;
+    margin-bottom: var(--spacing-40, 0);
+    display: flex;
+  }
+  &__title {
+    @include text-display-s;
+    display: flex;
+    gap: var(--spacing-40, 0);
+    align-items: center;
+    margin: 0;
+    padding: var(--spacing-30, 0) 0;
+  }
+
+  &__body {
+    @include text-body-m--regular;
+  }
+}
+
+.title-card {
+  @include text-display-m;
+  padding: var(--spacing-30, 0) 0;
+}

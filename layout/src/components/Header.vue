@@ -1,8 +1,9 @@
 <template>
-    <div id="app">
-      <router-link to="/">INICIO</router-link><br>
-      <router-link to="/microfrontend-1">Microfrontend 1</router-link><br>
-      <router-link to="/microfrontend-2">Microfrontend 2</router-link><br>
+    <div>
+      <h4>Menu Layout</h4>
+      <router-link to="/">Home</router-link><br><br>
+      <router-link to="/microfrontend-1">Maestro - MF1</router-link><br><br>
+      <router-link to="/microfrontend-2">Ficha de Unidad - MF2</router-link><br>
     </div>
 
 </template>
