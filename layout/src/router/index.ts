@@ -3,7 +3,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    component: () => import("../views/Principal.vue"),
+    component: () => import("../views/LayoutView.vue"),
   },
   {
     path: "/microfrontend-1",
