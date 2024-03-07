@@ -4,11 +4,9 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
+<style lang="scss" scoped>
 div {
   display: flex;
   justify-content: center;

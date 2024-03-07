@@ -56,6 +56,10 @@ export default defineComponent({
     grid-area: content;
     background-color: #ffffff;
     padding: 2rem;
+
+    h1 {
+      @include text-display-l;
+    }
   }
 }
 </style>
