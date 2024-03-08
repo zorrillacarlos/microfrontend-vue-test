@@ -3,7 +3,7 @@
     <BaseCard>
       <template #title>
         Titulo de la Ficha
-        <IconArrowCircleDown />
+        <IconInfo />
       </template>
       <template #body>
         <p>Este es el contenido de la Ficha</p>
@@ -14,5 +14,5 @@
 
 <script setup lang="ts">
 import BaseCard from './BaseCard.vue'
-import IconArrowCircleDown from '../../icons/IconArrowCircleDown.vue'
+import IconInfo from '../../icons/IconFeedbackInfo.vue'
 </script>
