@@ -4,7 +4,7 @@
       <Header />
     </div>
     <div class="main-layout__header">
-      <h4>Header Layout</h4>
+      <h4>Header Host</h4>
     </div>
     <div class="main-layout__content">
       <router-view> </router-view>

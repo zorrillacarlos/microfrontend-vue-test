@@ -1,9 +1,9 @@
 <template>
-    <div>
-      <h4>Menu Layout</h4>
-      <router-link to="/">Home</router-link><br><br>
-      <router-link to="/microfrontend-1">Maestro - MF1</router-link><br><br>
-      <router-link to="/microfrontend-2">Ficha de Unidad - MF2</router-link><br>
+    <div class="menu">
+      <h4>Menu Host</h4><br>
+      <router-link to="/">Host</router-link><br><br>
+      <router-link to="/microfrontend-1">Microfontend A</router-link><br><br>
+      <router-link to="/microfrontend-2">Microfrontend B</router-link>
     </div>
 
 </template>

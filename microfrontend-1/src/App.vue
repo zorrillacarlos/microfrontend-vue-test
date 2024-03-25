@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ViewTable from "./components/base/base-table/ViewTable.vue";
+import ViewTable from "./components/ViewTable.vue";
 </script>
 
 <template>

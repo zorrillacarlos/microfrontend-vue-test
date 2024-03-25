@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import BaseTable from './BaseTable.vue'; // Asegúrate de que la ruta del archivo sea correcta
+import { BaseTable } from 'vue-components-noatum'
 import { ref } from 'vue';
 
 // Datos de ejemplo para la tabla
@@ -57,5 +57,5 @@ const tableBody = ref([
     ]
   }
 ]);
-const title = ref('Tabla Maestro');
+const title = ref('Tabla Microfrontend A');
 </script>
